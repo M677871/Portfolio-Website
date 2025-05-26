@@ -49,6 +49,9 @@
         <a href="#contact" class="btn btn-outline-neon btn-lg px-4 py-2" data-aos="fade-left" data-aos-delay="500">
           <i class="fas fa-paper-plane me-2"></i>Contact Me
         </a>
+         <a href="./public/Miled_Issa_CV.docx" class="btn btn-outline-neon btn-lg px-4 py-2" data-aos="fade-left" data-aos-delay="500" download>
+          <i class="fas fa-file-code me-2"></i>Download CV
+        </a>
       </div>
     </div>
   </header>
@@ -63,37 +66,41 @@
       </div>
     </section>
 
+  <!-- Education -->
     <section id="education" class="section py-5 bg-dark-secondary" data-aos="fade-up" data-aos-delay="150">
-      <div class="container">
-        <h2 class="section-title text-center">Education</h2>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <article class="card-neon text-center">
-              <i class="fas fa-school fa-3x mb-3"></i>
-              <h5 class="fw-bold">École des Filles de la Charité</h5>
-              <small class="text-secondary">Elementary (2008–2020)</small>
-              <p class="mt-2 text-text-secondary">Achieved a strong academic foundation with a GPA of 16.7/20.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <article class="card-neon text-center">
-              <i class="fas fa-graduation-cap fa-3x mb-3"></i>
-              <h5 class="fw-bold">École Officielle Secondaire</h5>
-              <small class="text-secondary">Baccalaureate General Science (2020–2023)</small>
-              <p class="mt-2 text-text-secondary">Completed secondary education with a focus on science, earning a GPA of 17.28/20.</p>
-            </article>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <article class="card-neon text-center">
-              <i class="fas fa-university fa-3x mb-3"></i>
-              <h5 class="fw-bold">University of Balamand</h5>
-              <small class="text-secondary">BS in Computer Science (2024–Present)</small>
-              <p class="mt-2 text-text-secondary">Currently pursuing a Bachelor of Computer Science, maintaining a GPA of 3.7/4.0.</p>
-            </article>
-          </div>
-        </div>
+  <div class="container">
+    <h2 class="section-title text-center">Education</h2>
+    <div class="row g-4 justify-content-center equal-cards">
+      <!-- Elementary School -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+        <article class="card-neon text-center">
+          <i class="fas fa-school fa-3x mb-3 text-neon"></i>
+          <h5 class="fw-bold">École des Filles de la Charité - Zgharta</h5>
+          <small class="text-secondary">Elementary (2008–2020)</small>
+          <p class="mt-2 text-secondary"> GPA : 16.7/20</p>
+        </article>
       </div>
-    </section>
+      <!-- High School -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+        <article class="card-neon text-center">
+          <i class="fas fa-graduation-cap fa-3x mb-3 text-neon"></i>
+          <h5 class="fw-bold">École Officielle Secondaire Asaad Al Sebaali</h5>
+          <small class="text-secondary">Baccalaureate General Science (2020–2023)</small>
+          <p class="mt-2 text-secondary">GPA : 17.28/20 </p>
+        </article>
+      </div>
+      <!-- University -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <article class="card-neon text-center">
+          <i class="fas fa-university fa-3x mb-3 text-neon"></i>
+          <h5 class="fw-bold">University of Balamand</h5>
+          <small class="text-secondary">BS in Computer Science (2024–Present)</small>
+          <p class="mt-2 text-secondary">current GPA : 3.7/4</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="skills" class="section py-5 text-center" data-aos="fade-up" data-aos-delay="100">
       <div class="container">
@@ -158,6 +165,8 @@
         </div>
         <button id="loadMoreSkills" class="btn btn-outline-neon mt-5 px-4 py-2">Load More Skills</button>
       </div>
+      
+
     </section>
 
    <section id="projects" class="section py-5 bg-dark-secondary" data-aos="fade-up" data-aos-delay="200">
@@ -314,22 +323,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize AOS library for scroll animations
+    
+   
     AOS.init({
-      duration: 800, // Animation duration in ms
-      once: true,    // Whether animation should happen only once - off by default
-      offset: 100    // Offset (in px) from the top of the screen to trigger animations
+      duration: 800, 
+      once: true,   
+      offset: 100    
     });
 
-    // Get references to the "Back to Top" button, extra skill items, and "Load More Skills" button
+
     const backToTopBtn = document.getElementById('backToTop');
     const extraSkillItems = document.querySelectorAll('.skill-item.extra');
     const loadMoreSkillsBtn = document.getElementById('loadMoreSkills');
 
-    // Show/hide "Back to Top" button based on scroll position
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
-        backToTopBtn.style.display = 'flex'; // Use flex to center icon
+        backToTopBtn.style.display = 'flex'; 
       } else {
         backToTopBtn.style.display = 'none';
       }
@@ -344,11 +354,11 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Initially hide extra skill items
+
     extraSkillItems.forEach(s => s.style.display = 'none');
 
     loadMoreSkillsBtn.addEventListener('click', () => {
-      // Show all extra skill items
+      
       extraSkillItems.forEach(s => {
         s.style.display = 'block'; 
         AOS.refreshHard(); 
