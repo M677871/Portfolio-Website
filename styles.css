@@ -1,10 +1,10 @@
 :root {
   --dark-bg: #0a0a12;
   --dark-secondary: #161622;
-  --neon-primary: #00f7ff; /* Bright Cyan */
+  --neon-primary: #00f7ff;
   
-  --text-primary: #e0e0ff; /* Light Lavender */
-  --text-secondary: #a0a0c0; /* Muted Blue-Gray */
+  --text-primary: #e0e0ff; 
+  --text-secondary: #a0a0c0; 
   --transition-fast: 0.2s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
   --border-radius-lg: 1rem;
@@ -21,7 +21,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-primary);
-  padding-top: 80px; /* Offset for fixed navbar */
+  padding-top: 80px; 
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,7 +29,7 @@ body {
 
 /* Global Styles & Utilities */
 .container {
-  max-width: 1200px; /* Enforce max width for content */
+  max-width: 1200px; 
 }
 
 .text-neon {
@@ -168,7 +168,7 @@ body {
   border: 4px solid var(--neon-primary); /* Thicker border */
   box-shadow: 0 0 50px rgba(0, 247, 255, 0.3), inset 0 0 20px rgba(0, 247, 255, 0.1); /* Enhanced glow */
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  background: url('./images/miled.png') center/cover no-repeat; /* Placeholder image */
+  background: url('./images/miled1.png') center/cover no-repeat; /* Placeholder image */
   margin: 0 auto 2rem;
   position: relative; /* For potential future animations */
 }
@@ -485,7 +485,7 @@ footer {
   }
 
   .equal-height-card {
-    min-height: auto; /* Allow cards to adjust height on small screens */
+    min-height: auto; 
   }
 
   .btn-neon, .btn-outline-neon {
@@ -525,3 +525,4 @@ footer {
     font-size: 1.5rem;
   }
 }
+
