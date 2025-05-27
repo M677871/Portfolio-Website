@@ -465,6 +465,7 @@ footer {
     text-align: center;
   }
   .navbar-nav .nav-link::before {
+     display: none !important;
     left: 25%;
     width: 50%;
   }
@@ -525,4 +526,7 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+
+
 
