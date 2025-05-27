@@ -526,7 +526,27 @@ footer {
     font-size: 1.5rem;
   }
 }
+ .tech-badge {
+    background-color: rgba(0, 247, 255, 0.1);
+    border: 1px solid #00f7ff;
+    color: #00f7ff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
 
+  .tech-badge:hover {
+    background-color: rgba(0, 247, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  .tech-badge i {
+    font-size: 1rem;
+  }
 
 
 
