@@ -547,6 +547,12 @@ footer {
   .tech-badge i {
     font-size: 1rem;
   }
+  
+
+.tech-badge img {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(27%) saturate(566%) hue-rotate(139deg) brightness(99%) contrast(96%);
+}
+
 
 
 
