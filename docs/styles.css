@@ -63,6 +63,28 @@ body {
   z-index: 1000;
 }
 
+.navbar .container {
+  align-items: center;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: auto;
+}
+
+.nav-controls > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--border-radius-md);
+}
+
 .light-theme .navbar {
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -131,7 +153,11 @@ body {
 }
 
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.25) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .navbar-toggler-icon {
@@ -140,6 +166,7 @@ body {
 
 .light-theme .navbar-toggler {
   border-color: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .light-theme .navbar-toggler-icon {
@@ -268,6 +295,47 @@ body {
 
 .light-theme .btn-outline-neon:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--border-radius-md);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--neon-primary);
+  line-height: 1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn i {
+  font-size: 1.05rem;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.light-theme .theme-toggle-btn {
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--neon-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.light-theme .theme-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
 /* Sections */

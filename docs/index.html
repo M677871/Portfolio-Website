@@ -24,10 +24,16 @@
   <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation" data-aos="fade-down">
     <div class="container">
       <a class="navbar-brand" href="#">Miled Issa</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="nav-controls d-flex align-items-center ms-auto gap-2">
+        <button class="btn btn-outline-neon btn-sm theme-toggle-btn" id="themeToggle" type="button"
+          aria-label="Switch to light theme">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -38,11 +44,6 @@
           <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="./Miled_Issa_cv.pdf" target="_blank">CV</a></li>
-          <li class="nav-item ms-lg-2">
-            <button class="btn btn-outline-neon btn-sm" id="themeToggle" type="button" aria-label="Toggle theme">
-              Light Mode
-            </button>
-          </li>
         </ul>
       </div>
     </div>
@@ -567,13 +568,12 @@
       const storedTheme = localStorage.getItem('theme-preference');
 
       const applyTheme = (isLight) => {
+        const currentMode = isLight ? 'Light' : 'Dark';
         if (isLight) {
           bodyEl.classList.add('light-theme');
-          themeToggleBtn.textContent = 'Dark Mode';
           themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
         } else {
           bodyEl.classList.remove('light-theme');
-          themeToggleBtn.textContent = 'Light Mode';
           themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
         }
       };
