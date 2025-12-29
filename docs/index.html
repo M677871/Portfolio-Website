@@ -2,125 +2,198 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Miled Issa – Full-Stack Developer portfolio showcasing projects, skills, and contact information.">
-<link rel="icon" href="https://placehold.co/32x32/ffffff/000000?text=%3C%2F%3E" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Miled Issa | Full-Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description"
+    content="Miled Issa - Full-stack developer portfolio featuring projects, skills, education, and contact information." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Miled Issa | Full-Stack Developer" />
+  <meta property="og:description"
+    content="Secure, scalable full-stack applications with clean backend and modern frontend. Projects, skills, and contact." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="https://placehold.co/32x32/ffffff/000000?text=%3C%2F%3E" type="image/x-icon" />
+
+  <!-- Theme preload (prevents flicker) -->
+  <script>
+    (function () {
+      try {
+        const storedTheme = localStorage.getItem('theme-preference');
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        const theme = storedTheme === 'light' || storedTheme === 'dark'
+          ? storedTheme
+          : (prefersLight ? 'light' : 'dark');
+        document.documentElement.classList.toggle('light-theme', theme === 'light');
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Space+Grotesk:wght@300;500;700&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet">
+    rel="stylesheet" />
+
+  <!-- Vendor CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Your CSS -->
+  <link href="./styles.css" rel="stylesheet" />
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation" data-aos="fade-down">
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="110">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAV -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation" data-aos="fade-down">
     <div class="container">
-      <a class="navbar-brand" href="#">Miled Issa</a>
-      <div class="nav-controls d-flex align-items-center ms-auto gap-2">
-        <button class="btn btn-outline-neon btn-sm theme-toggle-btn" id="themeToggle" type="button"
-          aria-label="Switch to light theme">
-          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+      <a class="navbar-brand" href="#top" aria-label="Go to top">Miled Issa</a>
+
+      <div class="nav-controls d-flex align-items-center gap-2 ms-auto order-lg-2">
+        <button class="btn theme-toggle-btn" id="themeToggle" type="button" aria-label="Switch theme"
+          aria-pressed="false">
+          <i class="fas fa-sun" aria-hidden="true"></i>
         </button>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse" id="navbarNav">
+
+      <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Technical Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Selected Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#volunteering">Extracurricular Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificates">Relevant Coursework and Workshops</a></li>
+          <li class="nav-item"><a class="nav-link" href="#volunteering">Extracurricular</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Coursework</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="./Miled_Issa_CV.pdf" target="_blank">CV</a></li>
+
+          <!-- IMPORTANT: keep this filename exactly like your file: Miled_Issa_CV.pdf -->
+          <li class="nav-item">
+            <a class="nav-link nav-link-cta" href="./Miled_Issa_CV.pdf" target="_blank" rel="noopener noreferrer"
+              aria-label="Open CV in new tab">
+              CV
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="hero text-center" data-aos="zoom-in">
+  <!-- HERO -->
+  <header id="top" class="hero text-center" data-aos="zoom-in">
     <div class="container">
-      <div class="profile-image" data-aos="fade-in" data-aos-delay="300"></div>
+      <img class="profile-image" src="./images/miled.png" alt="Portrait of Miled Issa" width="220" height="220"
+        loading="eager" decoding="async" fetchpriority="high" />
 
       <h1 class="display-4 fw-bold mb-3 text-neon">Miled Issa</h1>
+
       <p class="lead mb-4 text-text-secondary">
-        Computer Science Student @ University of Balamand & 42 Beirut | Full-Stack Enthusiast
+        Computer Science student at University of Balamand &amp; 42 Beirut | Full-stack developer focused on secure,
+        scalable products.
       </p>
-      <div class="d-flex gap-3 justify-content-center flex-wrap">
-        <a href="#projects" class="btn btn-outline-neon btn-lg px-4 py-2" data-aos="fade-right" data-aos-delay="500">
-          <i class="fas fa-code me-2"></i>View Projects
+
+      <ul class="hero-badges">
+        <li class="pill"><i class="fa-solid fa-award" aria-hidden="true"></i> Dean's Honor List (Every Semester)</li>
+        <li class="pill"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> GPA 3.7 / 4</li>
+        <li class="pill"><i class="fa-solid fa-code" aria-hidden="true"></i> C / C++ / Java / JS / TS / Python</li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-cta btn-lg px-4 py-2">
+          <i class="fas fa-code" aria-hidden="true"></i>View Projects
         </a>
-        <a href="#contact" class="btn btn-outline-neon btn-lg px-4 py-2" data-aos="fade-left" data-aos-delay="500">
-          <i class="fas fa-paper-plane me-2"></i>Contact Me
+        <a href="./Miled_Issa_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg px-4 py-2"
+          download>
+          <i class="fas fa-file-lines" aria-hidden="true"></i>Download CV
         </a>
-        <a href="./Miled_Issa_cv.pdf" target="_blank" class="btn btn-outline-neon btn-lg px-4 py-2"
-          data-aos="fade-right" data-aos-delay="500" download>
-          <i class="fas fa-file-code me-2"></i>Check CV
+        <a href="#contact" class="btn btn-outline-neon btn-lg px-4 py-2">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>Contact Me
+        </a>
+      </div>
+
+      <div class="hero-social mt-4" aria-label="Social links">
+        <a class="social-chip" href="mailto:miled.r.issa@hotmail.com" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a class="social-chip" href="https://linkedin.com/in/miled-issa-360275333" target="_blank"
+          rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="social-chip" href="https://github.com/M677871" target="_blank" rel="noopener noreferrer"
+          aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="about" class="section py-5 text-center" data-aos="fade-up">
+  <main id="main">
+    <!-- ABOUT -->
+    <section id="about" class="section text-center" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">About Me</h2>
-        <p class="mx-auto text-text-primary" style="max-width:700px">
-Motivated Computer Science student specializing in full-stack development and algorithmic problem-solving.
- I build secure, scalable applications end to end, writing clean,
-  maintainable code across both frontend and backend, supported by a strong foundation in mathematics and analytical thinking.
-   Dean’s Honor List student every semester to date.
-    Currently strengthening my experience through real-world full-stack projects and intensive problem-solving,
-     and eager to contribute to high-impact products in collaborative, fast-moving teams.
+        <p class="about-text text-text-primary">
+          Motivated Computer Science student specializing in full-stack development and algorithmic problem-solving. I
+          build secure, scalable applications end-to-end, writing clean, maintainable code across frontend and backend,
+          grounded in strong mathematics and analytical thinking.
+          <span class="text-neon fw-semibold">Dean's Honor List student every semester to date.</span>
+          Currently strengthening my experience through real-world full-stack projects and intensive problem-solving,
+          and eager to contribute to high-impact products in collaborative, fast-moving teams.
         </p>
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="section py-5 bg-dark-secondary" data-aos="fade-up" data-aos-delay="150">
+    <!-- EDUCATION -->
+    <section id="education" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="150">
       <div class="container">
         <h2 class="section-title text-center">Education</h2>
+
         <div class="row g-4 justify-content-center equal-cards">
-          <!-- University of Balamand -->
           <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
             <article class="card-neon text-center">
               <div class="edu-header mb-2">
-                <img src="./images/UOB.png" alt="University of Balamand logo" class="edu-logo">
+                <img src="./images/UOB.png" alt="University of Balamand logo" class="edu-logo" width="72" height="72"
+                  loading="lazy" decoding="async" />
                 <div class="text-start">
-                  <h5 class="fw-bold mb-0">University of Balamand</h5>
-                  <small class="text-secondary">BS in Computer Science (2024–Present)</small>
+                  <h3 class="card-title mb-1">University of Balamand</h3>
+                  <p class="card-subtitle mb-0">BS in Computer Science (2024-Present)</p>
                 </div>
               </div>
-              <p class="mt-3 text-secondary mb-0">Current GPA: 3.7/4</p>
+
+              <div class="mini-facts">
+                <span class="mini-pill"><i class="fa-solid fa-star" aria-hidden="true"></i> GPA: 3.7/4</span>
+                <span class="mini-pill"><i class="fa-solid fa-award" aria-hidden="true"></i> Honor List</span>
+              </div>
             </article>
           </div>
 
-          <!-- 42 Beirut -->
           <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
             <article class="card-neon text-center">
               <div class="edu-header mb-2">
-                <img src="./images/42beirut-logo.png" alt="42 Beirut logo" class="edu-logo">
+                <img src="./images/42beirut-logo.png" alt="42 Beirut logo" class="edu-logo" width="72" height="72"
+                  loading="lazy" decoding="async" />
                 <div class="text-start">
-                  <h5 class="fw-bold mb-0">42 Beirut</h5>
-                  <small class="text-secondary">Software Engineering Student (2025–Present)</small>
+                  <h3 class="card-title mb-1">42 Beirut</h3>
+                  <p class="card-subtitle mb-0">Software Engineering Student (2025-Present)</p>
                 </div>
               </div>
-              <p class="mt-3 text-secondary mb-0">
-               Project-based, peer-to-peer core curriculum in C and Python programming, algorithms, Unix, 
-               and low-level systems, with no traditional classes—learning happens through projects, 
-               peer review, and code evaluations.
+
+              <p class="text-text-secondary mb-0 mt-3">
+                Project-based, peer-to-peer core curriculum in C and Python, algorithms, Unix, and low-level systems -
+                learning through projects, peer review, and code evaluations.
               </p>
             </article>
           </div>
@@ -128,283 +201,254 @@ Motivated Computer Science student specializing in full-stack development and al
       </div>
     </section>
 
-    <section id="skills" class="section py-5 text-center" data-aos="fade-up" data-aos-delay="100">
+    <!-- SKILLS -->
+    <section id="skills" class="section text-center" data-aos="fade-up" data-aos-delay="100">
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
-        <div class="row g-4 justify-content-center skills-list">
 
-          <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="100">
-            <article class="card-neon skill-card">
-              <i class="fab fa-java fa-3x mb-3"></i>
-              <h6 class="fw-bold">Java</h6>
-              <p class="text-secondary mb-0">OOP , REST APIs & Desktop Apps</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="200">
-            <article class="card-neon skill-card">
-              <i class="fab fa-js-square fa-3x mb-3"></i>
-              <h6 class="fw-bold">JavaScript</h6>
-              <p class="text-secondary mb-0">Web APIs & Backend</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="300">
-            <article class="card-neon skill-card">
-              <i class="fas fa-database fa-3x mb-3"></i>
-              <h6 class="fw-bold">Databases</h6>
-              <p class="text-secondary mb-0">SQL, MariaDB, PostgreSQL</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="400">
-            <article class="card-neon skill-card text-center">
-              <div class="mb-3" style="height: 48px;">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt="C++"
-                  style="height: 48px; width: auto; filter: brightness(0) saturate(100%) invert(77%) sepia(15%) 
-                  saturate(5593%) hue-rotate(148deg) brightness(103%) contrast(102%);">
+        <div class="row g-4 justify-content-center skills-grid">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+            <article class="card-neon skills-card">
+              <div class="skills-card-header">
+                <span class="skills-icon" aria-hidden="true">
+                  <i class="fas fa-code"></i>
+                </span>
+                <div class="skills-card-title">
+                  <h3 class="skills-title">Languages</h3>
+                  <p class="skills-subtitle text-text-secondary">Core programming and web languages.</p>
+                </div>
               </div>
-              <h6 class="fw-bold">C++</h6>
-              <p class="text-secondary mb-0">DS, Algorithms, Memory Mgmt.</p>
+              <ul class="skill-chip-list" aria-label="Languages">
+                <li class="skill-chip">Python</li>
+                <li class="skill-chip">C++</li>
+                <li class="skill-chip">Java</li>
+                <li class="skill-chip">JavaScript</li>
+                <li class="skill-chip">TypeScript</li>
+                <li class="skill-chip">SQL</li>
+                <li class="skill-chip">HTML</li>
+                <li class="skill-chip">CSS</li>
+                <li class="skill-chip">Bash</li>
+              </ul>
             </article>
           </div>
 
-          <!-- Spring Boot -->
-<div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="150">
-  <article class="card-neon skill-card text-center">
-    <div class="mb-3" style="height: 48px;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/springboot.svg"
-           alt="Spring Boot"
-           style="height: 48px; width: auto; filter: brightness(0) saturate(100%) invert(77%) sepia(15%) 
-           saturate(5593%) hue-rotate(148deg) brightness(103%) contrast(102%);">
-    </div>
-    <h6 class="fw-bold">Spring Boot</h6>
-    <p class="text-secondary mb-0">REST APIs & Backend</p>
-  </article>
-</div>
-
-          <!-- Extras -->
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="500">
-            <article class="card-neon skill-card">
-              <i class="fab fa-node-js fa-3x mb-3"></i>
-              <h6 class="fw-bold">Node.js</h6>
-              <p class="text-secondary mb-0">REST & Server-Side JS</p>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <article class="card-neon skills-card">
+              <div class="skills-card-header">
+                <span class="skills-icon" aria-hidden="true">
+                  <i class="fas fa-screwdriver-wrench"></i>
+                </span>
+                <div class="skills-card-title">
+                  <h3 class="skills-title">Developer Tools</h3>
+                  <p class="skills-subtitle text-text-secondary">Everyday tooling and environments.</p>
+                </div>
+              </div>
+              <ul class="skill-chip-list" aria-label="Developer tools">
+                <li class="skill-chip">Git &amp; GitHub</li>
+                <li class="skill-chip">VS Code</li>
+                <li class="skill-chip">IntelliJ IDEA</li>
+                <li class="skill-chip">Android Studio</li>
+                <li class="skill-chip">Xcode</li>
+                <li class="skill-chip">NetBeans</li>
+                <li class="skill-chip">RStudio</li>
+                <li class="skill-chip">Linux shell</li>
+                <li class="skill-chip">Postman</li>
+              </ul>
             </article>
           </div>
 
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="600">
-            <article class="card-neon skill-card">
-              <i class="fab fa-react fa-3x mb-3"></i>
-              <h6 class="fw-bold">React.js</h6>
-              <p class="text-secondary mb-0">UI Components & Hooks</p>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <article class="card-neon skills-card">
+              <div class="skills-card-header">
+                <span class="skills-icon" aria-hidden="true">
+                  <i class="fas fa-layer-group"></i>
+                </span>
+                <div class="skills-card-title">
+                  <h3 class="skills-title">Technologies / Frameworks</h3>
+                  <p class="skills-subtitle text-text-secondary">Platforms, libraries, and APIs.</p>
+                </div>
+              </div>
+              <ul class="skill-chip-list" aria-label="Technologies and frameworks">
+                <li class="skill-chip">Spring Boot</li>
+                <li class="skill-chip">JavaFX</li>
+                <li class="skill-chip">Node.js</li>
+                <li class="skill-chip">Express.js</li>
+                <li class="skill-chip">React.js</li>
+                <li class="skill-chip">EJS</li>
+                <li class="skill-chip">REST APIs</li>
+                <li class="skill-chip">MariaDB</li>
+                <li class="skill-chip">PostgreSQL</li>
+              </ul>
             </article>
           </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="700">
-            <article class="card-neon skill-card">
-              <i class="fab fa-html5 fa-3x mb-3"></i>
-              <h6 class="fw-bold">HTML5</h6>
-              <p class="text-secondary mb-0">Semantic & Accessible</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="800">
-            <article class="card-neon skill-card">
-              <i class="fab fa-css3-alt fa-3x mb-3"></i>
-              <h6 class="fw-bold">CSS3</h6>
-              <p class="text-secondary mb-0">Flexbox, Grid & Animations</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="900">
-            <article class="card-neon skill-card">
-              <i class="fab fa-bootstrap fa-3x mb-3"></i>
-              <h6 class="fw-bold">Bootstrap</h6>
-              <p class="text-secondary mb-0">Responsive Components</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="1000">
-            <article class="card-neon skill-card">
-              <i class="fas fa-server fa-3x mb-3"></i>
-              <h6 class="fw-bold">Express.js</h6>
-              <p class="text-secondary mb-0">Middleware & Routing</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="1100">
-            <article class="card-neon skill-card">
-              <i class="fas fa-code fa-3x mb-3"></i>
-              <h6 class="fw-bold">EJS</h6>
-              <p class="text-secondary mb-0">Server-Side Templating</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="1200">
-            <article class="card-neon skill-card">
-              <i class="fas fa-terminal fa-3x mb-3"></i>
-              <h6 class="fw-bold">Command Line</h6>
-              <p class="text-secondary mb-0">Bash & Automation</p>
-            </article>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 skill-item extra" data-aos="flip-left" data-aos-delay="1300">
-            <article class="card-neon skill-card">
-              <i class="fab fa-github fa-3x mb-3"></i>
-              <h6 class="fw-bold">Git & GitHub</h6>
-              <p class="text-secondary mb-0">Version Control</p>
-            </article>
-          </div>
-
         </div>
-
-        <button id="loadMoreSkills" class="btn btn-outline-neon mt-5 px-4 py-2">
-          Load More Skills
-        </button>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section py-5 bg-dark-secondary" data-aos="fade-up" data-aos-delay="200">
+    <!-- PROJECTS -->
+    <section id="projects" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="200">
       <div class="container">
         <h2 class="section-title text-center mb-5">Selected Projects</h2>
+
         <div class="row g-4">
-
-          <!-- NEW: Secure Online Learning Platform (Spring Boot + JavaFX) -->
           <div class="col-lg-6" data-aos="fade-up">
-            <div class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3>Secure Online Learning Platform</h3>
+            <article class="project-card">
+              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
+                <h3 class="project-title">Secure Online Learning Platform</h3>
                 <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-java"></i> Spring Boot</span>
-                  <span class="tech-badge"><i class="fas fa-key"></i> JWT & OTP 2FA</span>
-                  <span class="tech-badge"><i class="fas fa-desktop"></i> JavaFX</span>
-                  <span class="tech-badge"><i class="fas fa-database"></i> PostgreSQL</span>
+                  <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Spring Boot</span>
+                  <span class="tech-badge"><i class="fas fa-key" aria-hidden="true"></i> JWT + OTP 2FA</span>
+                  <span class="tech-badge"><i class="fas fa-desktop" aria-hidden="true"></i> JavaFX</span>
+                  <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
                 </div>
               </div>
-              <p class="text-secondary">
-                A production-ready online learning platform featuring role-based access control, email OTP
-                two-factor authentication, JWT-secured REST APIs, and a modern JavaFX desktop client for
-                administrators, instructors, and students and all data access is JPA (ORM) only—no native SQL.
+
+              <p class="text-text-secondary project-summary">
+                Secure learning platform with an API-first backend and desktop client experience.
               </p>
-              <a href="https://github.com/M677871/csis-231-project.git" class="btn btn-outline-neon mt-3"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github me-2"></i>View Code
+              <ul class="impact-list">
+                <li>Role-based access with email OTP 2FA and JWT-secured REST APIs.</li>
+                <li>Modern JavaFX desktop client integrated with the platform.</li>
+                <li>JPA-only data access layer (no native SQL) for maintainability.</li>
+              </ul>
+
+              <a href="https://github.com/M677871/csis-231-project.git" class="btn btn-outline-neon mt-3" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>View Code
               </a>
-            </div>
+            </article>
           </div>
 
-          <!-- Online Learning Platform (Node.js / Express) -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3>Online Learning Platform</h3>
+            <article class="project-card">
+              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
+                <h3 class="project-title">Online Learning Platform</h3>
                 <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
-                  <span class="tech-badge"><i class="fas fa-server"></i> Express.js</span>
-                  <span class="tech-badge"><i class="fas fa-database"></i> SQL</span>
-                  <span class="tech-badge"><i class="fas fa-code"></i> EJS</span>
+                  <span class="tech-badge"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
+                  <span class="tech-badge"><i class="fas fa-server" aria-hidden="true"></i> Express</span>
+                  <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> SQL</span>
+                  <span class="tech-badge"><i class="fas fa-code" aria-hidden="true"></i> EJS</span>
                 </div>
               </div>
-              <p class="text-secondary">
-                A robust full-stack educational platform designed for seamless course management. It
-                features secure user authentication, a comprehensive admin dashboard, and dynamically
-                rendered content from a database.
+
+              <p class="text-text-secondary project-summary">
+                Full-stack learning platform with secure authentication and dynamic content.
               </p>
-              <a href="https://github.com/M677871/csis-228-project.git" class="btn btn-outline-neon mt-3"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github me-2"></i>View Code
+              <ul class="impact-list">
+                <li>Secure authentication with an admin dashboard for management workflows.</li>
+                <li>Dynamic EJS pages rendered from a SQL-backed database.</li>
+                <li>Node.js and Express backend driving end-to-end features.</li>
+              </ul>
+
+              <a href="https://github.com/M677871/csis-228-project.git" class="btn btn-outline-neon mt-3" target="_blank"
+                rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>View Code
               </a>
-            </div>
+            </article>
           </div>
 
-          <!-- Static Array Linked List -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3>Static Array Linked List</h3>
+            <article class="project-card">
+              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
+                <h3 class="project-title">Static Array Linked List</h3>
                 <div class="d-flex gap-2 flex-wrap justify-content-end">
                   <span class="tech-badge">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg"
-                      alt="C++" style="width: 16px; height: 16px;"> C++
+                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Data Structures
                   </span>
                   <span class="tech-badge">
-                    <i class="fas fa-network-wired"></i> Data Structures
+                    <img class="badge-icon-svg"
+                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt="C++"
+                      width="16" height="16" loading="lazy" decoding="async" />
+                    C++
                   </span>
                 </div>
               </div>
-              <p class="text-secondary">
-                An efficient linked list implementation leveraging static array allocation.
-                It demonstrates O(1) complexity for key operations and introduces a custom iterator for simplified traversal.
+
+              <p class="text-text-secondary project-summary">
+                Memory-efficient linked list design optimized for predictable performance.
               </p>
+              <ul class="impact-list">
+                <li>Static array allocation reduces overhead and improves cache locality.</li>
+                <li>Custom iterator enables clean traversal and integration.</li>
+              </ul>
+
               <a href="https://github.com/M677871/ArrayBasedLinkedList.git" class="btn btn-outline-neon mt-3"
                 target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github me-2"></i>View Code
+                <i class="fab fa-github" aria-hidden="true"></i>View Code
               </a>
-            </div>
+            </article>
           </div>
 
-          <!-- Flight Reservation System -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3>Flight Reservation System</h3>
+            <article class="project-card">
+              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
+                <h3 class="project-title">Flight Reservation System</h3>
                 <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-java"></i> Java</span>
-                  <span class="tech-badge"><i class="fas fa-cube"></i> OOP</span>
+                  <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Java</span>
+                  <span class="tech-badge"><i class="fas fa-cube" aria-hidden="true"></i> OOP</span>
                 </div>
               </div>
-              <p class="text-secondary">
-                A comprehensive object-oriented airline management system. It features intelligent seat
-                allocation algorithms, robust ticket management functionalities, and reliable data
-                persistence.
+
+              <p class="text-text-secondary project-summary">
+                Object-oriented airline management with reliable data workflows.
               </p>
+              <ul class="impact-list">
+                <li>Seat allocation logic and ticket management workflows.</li>
+                <li>Reliable persistence for flight and passenger records.</li>
+              </ul>
+
               <a href="https://github.com/M677871/flight-reservation-system.git" class="btn btn-outline-neon mt-3"
                 target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github me-2"></i>View Code
+                <i class="fab fa-github" aria-hidden="true"></i>View Code
               </a>
-            </div>
+            </article>
           </div>
 
-          <!-- Interactive Drum Kit -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h3>Interactive Drum Kit</h3>
+            <article class="project-card">
+              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
+                <h3 class="project-title">Interactive Drum Kit</h3>
                 <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
-                  <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
-                  <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+                  <span class="tech-badge"><i class="fab fa-html5" aria-hidden="true"></i> HTML</span>
+                  <span class="tech-badge"><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS</span>
+                  <span class="tech-badge"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</span>
                 </div>
               </div>
-              <p class="text-secondary">
-                A dynamic web-based drum machine offering a tactile musical experience. It provides keyboard
-                controls, instant visual feedback, and real-time audio processing via the Web Audio API.
+
+              <p class="text-text-secondary project-summary">
+                Interactive drum machine with crisp UI feedback and audio response.
               </p>
+              <ul class="impact-list">
+                <li>Keyboard-driven controls with instant visual feedback.</li>
+                <li>Real-time audio playback for responsive performance.</li>
+              </ul>
+
               <a href="https://github.com/M677871/web-drumkit.git" class="btn btn-outline-neon mt-3" target="_blank"
                 rel="noopener noreferrer">
-                <i class="fab fa-github me-2"></i>View Code
+                <i class="fab fa-github" aria-hidden="true"></i>View Code
               </a>
-            </div>
+            </article>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section id="volunteering" class="section py-5 bg-dark-secondary" data-aos="fade-up" data-aos-delay="220">
+    <!-- EXTRACURRICULAR -->
+    <section id="volunteering" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="220">
       <div class="container">
         <h2 class="section-title text-center">Extracurricular Activities</h2>
+
         <div class="row g-4 justify-content-center">
           <div class="col-md-8 col-lg-7" data-aos="zoom-in" data-aos-delay="100">
             <article class="card-neon project-card">
               <div class="d-flex justify-content-between align-items-start mb-3">
                 <div>
-                  <h3>Vice President – UOB Developers Club</h3>
-                  <small class="text-secondary">University of Balamand · 2025–Present</small>
+                  <h3 class="project-title mb-1">Vice President - UOB Developers Club</h3>
+                  <small class="text-text-secondary">University of Balamand - 2025-Present</small>
                 </div>
               </div>
-              <ul class="text-secondary mb-0 ps-3">
+
+              <ul class="text-text-secondary mb-0 ps-3">
                 <li>Co-leading the developer community on campus.</li>
                 <li>Organizing workshops, coding sessions, and tech events.</li>
                 <li>Supporting members with learning resources and project guidance.</li>
@@ -415,181 +459,218 @@ Motivated Computer Science student specializing in full-stack development and al
       </div>
     </section>
 
-    <!-- Certificates & Awards Section -->
-    <section id="certificates" class="section py-5 text-center" data-aos="fade-up" data-aos-delay="200">
+    <!-- COURSEWORK -->
+    <section id="certificates" class="section text-center" data-aos="fade-up" data-aos-delay="200">
       <div class="container">
         <h2 class="section-title">Relevant Coursework and Workshops</h2>
+
         <div class="row g-4 justify-content-center equal-cards">
-          <!-- Udemy Full Stack Web Dev with Angela Yu -->
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
             <article class="card-neon text-center">
-              <i class="fas fa-certificate fa-3x mb-3 text-neon"></i>
-              <h5 class="fw-bold">The Complete 2025 Web Development Bootcamp</h5>
-              <small class="text-secondary">Udemy (Angela Yu) - 2025</small>
-              <p class="mt-2 text-secondary">Completed 60+ hours of comprehensive full-stack web development training,
-                mastering technologies like Node.js, Express, React, and postgreSQL.</p>
+              <i class="fas fa-certificate fa-3x mb-3 text-neon" aria-hidden="true"></i>
+              <h3 class="card-title">The Complete 2025 Web Development Bootcamp</h3>
+              <p class="card-subtitle mb-2">Udemy (Angela Yu) - 2025</p>
+              <p class="text-text-secondary mb-0">
+                Completed 60+ hours of full-stack training covering Node.js, Express, React, and PostgreSQL.
+              </p>
               <a href="https://www.udemy.com/certificate/UC-3dfaf716-aeed-4a0d-8b53-7cbd6dd16a50/" target="_blank"
-                rel="noopener noreferrer" class="btn btn-outline-neon btn-sm mt-3">View Certificate</a>
+                rel="noopener noreferrer" class="btn btn-outline-neon btn-sm mt-3">
+                View Certificate
+              </a>
             </article>
           </div>
-
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section py-5 text-center" data-aos="fade-up" data-aos-delay="300">
+    <!-- CONTACT -->
+    <section id="contact" class="section text-center" data-aos="fade-up" data-aos-delay="300">
       <div class="container">
         <h2 class="section-title">Get in Touch</h2>
+
         <div class="row g-4 justify-content-center">
           <div class="col-12 col-md-4" data-aos="zoom-in">
             <article class="card-neon contact-card">
-              <i class="fas fa-envelope fa-3x mb-3"></i>
-              <h6 class="fw-bold">Email</h6>
-              <a href="mailto:miled.r.issa@hotmail.com" class="d-block text-neon fw-bold">Email me</a>
+              <i class="fas fa-envelope fa-3x mb-3" aria-hidden="true"></i>
+              <h3 class="contact-title">Email</h3>
+              <a href="mailto:miled.r.issa@hotmail.com" class="d-block text-neon fw-bold">miled.r.issa@hotmail.com</a>
             </article>
           </div>
+
           <div class="col-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
             <article class="card-neon contact-card">
-              <i class="fab fa-linkedin fa-3x mb-3"></i>
-              <h6 class="fw-bold">LinkedIn</h6>
+              <i class="fab fa-linkedin fa-3x mb-3" aria-hidden="true"></i>
+              <h3 class="contact-title">LinkedIn</h3>
               <a href="https://linkedin.com/in/miled-issa-360275333" class="d-block text-neon fw-bold" target="_blank"
                 rel="noopener noreferrer">Connect on LinkedIn</a>
             </article>
           </div>
+
           <div class="col-12 col-md-4" data-aos="zoom-in" data-aos-delay="200">
             <article class="card-neon contact-card">
-              <i class="fab fa-github fa-3x mb-3"></i>
-              <h6 class="fw-bold">GitHub</h6>
+              <i class="fab fa-github fa-3x mb-3" aria-hidden="true"></i>
+              <h3 class="contact-title">GitHub</h3>
               <a href="https://github.com/M677871" class="d-block text-neon fw-bold" target="_blank"
                 rel="noopener noreferrer">Explore My GitHub</a>
             </article>
           </div>
-
         </div>
       </div>
-
     </section>
-
   </main>
 
-  <footer class="text-center py-4">
-    <div class="d-flex justify-content-center gap-4 mb-3 flex-wrap">
-      <a href="mailto:miled.r.issa@hotmail.com" class="social-icon" target="_blank" rel="noopener noreferrer"
-        aria-label="Send email">
-        <i class="fas fa-envelope"></i>
-      </a>
+  <!-- FOOTER -->
+  <footer class="text-center">
+    <div class="container py-4">
+      <div class="d-flex justify-content-center gap-4 mb-3 flex-wrap">
+        <a href="mailto:miled.r.issa@hotmail.com" class="social-icon" aria-label="Send email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/96170320984" class="social-icon" target="_blank" rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/miled-issa-360275333" class="social-icon" target="_blank"
+          rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/M677871" class="social-icon" target="_blank" rel="noopener noreferrer"
+          aria-label="View GitHub repositories">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
 
-      <a href="https://wa.me/96170320984" class="social-icon" target="_blank" rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-
-      <a href="https://www.linkedin.com/in/miled-issa-360275333" class="social-icon" target="_blank"
-        rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
-        <i class="fab fa-linkedin"></i>
-      </a>
-
-      <a href="https://github.com/M677871" class="social-icon" target="_blank" rel="noopener noreferrer"
-        aria-label="View GitHub repositories">
-        <i class="fab fa-github"></i>
-      </a>
+      <p class="text-text-secondary mb-0">
+        &copy; <span id="year"></span> Miled Issa. All rights reserved.
+      </p>
     </div>
-
-    <p class="text-secondary mb-0">
-      &copy; <span id="year"></span> Miled Issa. All rights reserved.
-    </p>
   </footer>
 
-  <button id="backToTop" class="btn btn-outline-neon position-fixed" style="
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    padding: 10px 12px;
-    border-radius: 4px;
-    z-index: 1000;
-  " aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
+  <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- App JS -->
   <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100
-    });
+    (function () {
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const extraSkillItems = Array.from(document.querySelectorAll('.skill-item.extra'));
-    const loadMoreSkillsBtn = document.getElementById('loadMoreSkills');
-    const STEP = 4;
-
-    let shownCount = 0;
-    let expanded = false;
-
-    extraSkillItems.forEach(el => el.style.display = 'none');
-
-    loadMoreSkillsBtn.addEventListener('click', () => {
-      if (!expanded) {
-        const nextBatch = extraSkillItems.slice(shownCount, shownCount + STEP);
-        nextBatch.forEach(el => {
-          el.style.display = '';
-          AOS.refreshHard();
-        });
-
-        shownCount += nextBatch.length;
-
-        if (shownCount >= extraSkillItems.length) {
-          loadMoreSkillsBtn.textContent = 'Show Less';
-          expanded = true;
-        }
-      } else {
-        extraSkillItems.forEach(el => el.style.display = 'none');
-        shownCount = 0;
-        loadMoreSkillsBtn.textContent = 'Load More';
-        expanded = false;
-        AOS.refreshHard();
+      // AOS (disable if reduced motion)
+      if (!prefersReducedMotion && window.AOS) {
+        AOS.init({ duration: 700, once: true, offset: 110, easing: 'ease-out-cubic' });
       }
-    });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    const themeToggleBtn = document.getElementById('themeToggle');
-    if (themeToggleBtn) {
-      const bodyEl = document.body;
-      const storedTheme = localStorage.getItem('theme-preference');
-
-      const applyTheme = (isLight) => {
-        const currentMode = isLight ? 'Light' : 'Dark';
-        if (isLight) {
-          bodyEl.classList.add('light-theme');
-          themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
-        } else {
-          bodyEl.classList.remove('light-theme');
-          themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
-        }
-      };
-
-      applyTheme(storedTheme === 'light');
-
-      themeToggleBtn.addEventListener('click', () => {
-        const isLight = !bodyEl.classList.contains('light-theme');
-        applyTheme(isLight);
-        localStorage.setItem('theme-preference', isLight ? 'light' : 'dark');
+      // Close mobile nav on link click
+      const navCollapse = document.getElementById('navbarNav');
+      const navLinks = Array.from(document.querySelectorAll('#navbarNav .nav-link'));
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const isExpanded = navCollapse && navCollapse.classList.contains('show');
+          if (isExpanded && window.bootstrap) {
+            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
+            bsCollapse.hide();
+          }
+        });
       });
-    }
-  </script>
 
+      // Back to Top (throttled)
+      const backToTopBtn = document.getElementById('backToTop');
+      let ticking = false;
+
+      function updateBackToTop() {
+        if (!backToTopBtn) return;
+        const show = window.scrollY > 400;
+        backToTopBtn.classList.toggle('is-visible', show);
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateBackToTop);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        });
+        updateBackToTop();
+      }
+
+      // Theme toggle (respects system preference if nothing stored)
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const rootEl = document.documentElement;
+      const iconEl = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+
+      function setTheme(mode) {
+        const isLight = mode === 'light';
+        rootEl.classList.toggle('light-theme', isLight);
+
+        if (themeToggleBtn) {
+          themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+          themeToggleBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        }
+        if (iconEl) {
+          iconEl.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        }
+      }
+
+      const storedTheme = localStorage.getItem('theme-preference');
+      if (storedTheme === 'light' || storedTheme === 'dark') {
+        setTheme(storedTheme);
+      } else {
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        setTheme(prefersLight ? 'light' : 'dark');
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const isLight = rootEl.classList.contains('light-theme');
+          const next = isLight ? 'dark' : 'light';
+          setTheme(next);
+          localStorage.setItem('theme-preference', next);
+        });
+      }
+
+      // Active nav link (IntersectionObserver)
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+      const linkMap = new Map(
+        navLinks
+          .filter(a => a.getAttribute('href') && a.getAttribute('href').startsWith('#'))
+          .map(a => [a.getAttribute('href').slice(1), a])
+      );
+
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.getAttribute('id');
+            linkMap.forEach((a) => {
+              a.classList.remove('active');
+              a.removeAttribute('aria-current');
+            });
+            const active = linkMap.get(id);
+            if (active) {
+              active.classList.add('active');
+              active.setAttribute('aria-current', 'page');
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
+
+        sections.forEach(sec => io.observe(sec));
+      }
+    })();
+  </script>
 </body>
 
 </html>
