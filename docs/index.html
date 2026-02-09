@@ -1,44 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Miled Issa | Full-Stack Developer</title>
   <meta name="description"
-    content="Miled Issa - Full-stack developer portfolio featuring projects, skills, education, and contact information." />
-  <meta name="theme-color" content="#0b0b0b" />
+    content="Miled Issa — Full-stack developer portfolio. Projects, skills, education, and contact." />
+  <meta name="theme-color" content="#07090d" />
   <meta name="color-scheme" content="dark light" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Miled Issa | Full-Stack Developer" />
   <meta property="og:description"
-    content="Secure, scalable full-stack applications with clean backend and modern frontend. Projects, skills, and contact." />
+    content="Secure, scalable full-stack applications with clean backend and modern frontend." />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="https://placehold.co/32x32/ffffff/000000?text=%3C%2F%3E" type="image/x-icon" />
+  <link rel="icon" href="https://placehold.co/32x32/07090d/d4a853?text=%3C/%3E" type="image/x-icon" />
 
-
+  <!-- FOUC-prevention: apply theme before paint -->
   <script>
     (function () {
       try {
-        const storedTheme = localStorage.getItem('theme-preference');
-        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        const theme = storedTheme === 'light' || storedTheme === 'dark'
-          ? storedTheme
-          : (prefersLight ? 'light' : 'dark');
-        document.documentElement.classList.toggle('light-theme', theme === 'light');
+        var s = localStorage.getItem('theme-preference');
+        var t = s === 'light' || s === 'dark' ? s : 'dark';
+        if (t === 'light') document.documentElement.classList.add('light-theme');
       } catch (e) { }
     })();
   </script>
 
- 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 
   <!-- Vendor CSS -->
@@ -46,21 +43,42 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Your CSS -->
+  <!-- Site CSS -->
   <link href="./styles.css" rel="stylesheet" />
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="110">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
-  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation" data-aos="fade-down">
-    <div class="container">
-      <a class="navbar-brand" href="#top" aria-label="Go to top">Miled Issa</a>
+  <!-- ═══ NAV ═══ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg" aria-label="Main navigation" data-aos="fade-down">
+    <div class="container nav-shell">
+      <a class="navbar-brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">&lt;mi&gt;</span>
+        <span class="brand-text">miled.issa</span>
+      </a>
+
+      <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#volunteering">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates">Coursework</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-cta" href="./Miled_Issa_CV.pdf" target="_blank" rel="noopener noreferrer"
+              aria-label="Open CV in new tab">
+              <i class="fas fa-file-alt" aria-hidden="true"></i> CV
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div class="nav-controls d-flex align-items-center gap-2 ms-auto order-lg-2">
-        <button class="btn theme-toggle-btn" id="themeToggle" type="button" aria-label="Switch theme"
-          aria-pressed="false">
+        <button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Switch theme"
+          aria-pressed="false" title="Toggle theme">
           <i class="fas fa-sun" aria-hidden="true"></i>
         </button>
 
@@ -69,636 +87,530 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-
-      <div class="collapse navbar-collapse order-lg-1" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Technical Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Selected Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#volunteering">Extracurricular</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificates">Coursework</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-
-          <!-- IMPORTANT: keep this filename exactly like your file: Miled_Issa_CV.pdf -->
-          <li class="nav-item">
-            <a class="nav-link nav-link-cta" href="./Miled_Issa_CV.pdf" target="_blank" rel="noopener noreferrer"
-              aria-label="Open CV in new tab">
-              CV
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header id="top" class="hero text-center" data-aos="zoom-in">
-    <div class="container">
-      <img class="profile-image" src="./images/miled.png" alt="Portrait of Miled Issa" width="220" height="220"
-        loading="eager" decoding="async" fetchpriority="high" />
+  <!-- ═══ HERO ═══ -->
+  <header id="top" class="hero" data-aos="fade-up" data-aos-duration="800">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="hero-kicker">Full-Stack Developer</p>
+        <h1 class="hero-title">Miled Issa</h1>
+        <div class="portrait-frame portrait-frame--mobile">
+          <div class="portrait-core">
+            <img class="profile-image" src="./images/miled.png" alt="Portrait of Miled Issa" width="220" height="220"
+              loading="eager" decoding="async" />
+          </div>
+        </div>
+        <p class="hero-lead">
+          Computer Science student @ University of Balamand | 42 Beirut student.
+          
+        </p>
 
-      <h1 class="display-4 fw-bold mb-3 text-neon">Miled Issa</h1>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary btn-lg">
+            <i class="fas fa-code" aria-hidden="true"></i> View Projects
+          </a>
+          <a href="./Miled_Issa_CV.pdf" class="btn btn-outline btn-lg" download>
+            <i class="fas fa-download" aria-hidden="true"></i> Download CV
+          </a>
+          <a href="#contact" class="btn btn-ghost btn-lg">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Me
+          </a>
+        </div>
 
-      <p class="lead mb-4 text-text-secondary">
-        Computer Science student @ University of Balamand &amp; 42 Beirut.
-      </p>
+        <div class="hero-meta" aria-label="Highlights">
+          <div class="meta-card">
+            <span class="meta-marker" aria-hidden="true"></span>
+            <span class="meta-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+            <span class="meta-text">Dean's Honor List</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-marker" aria-hidden="true"></span>
+            <span class="meta-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span class="meta-text">GPA 3.7 / 4</span>
+          </div>
+          <div class="meta-card">
+            <span class="meta-marker" aria-hidden="true"></span>
+            <span class="meta-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+            <span class="meta-text">C / C++ / Java / JS / TS / Python</span>
+          </div>
+        </div>
 
-      <ul class="hero-badges">
-        <li class="pill"><i class="fa-solid fa-award" aria-hidden="true"></i> Dean's Honor List (Every Semester)</li>
-        <li class="pill"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> GPA 3.7 / 4</li>
-        <li class="pill"><i class="fa-solid fa-code" aria-hidden="true"></i> C / C++ / Java / JS / TS / Python</li>
-      </ul>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-outline-neon btn-lg px-4 py-2">
-          <i class="fas fa-code" aria-hidden="true"></i>View Projects
-        </a>
-      <a href="./Miled_Issa_CV.pdf" class="btn btn-outline-neon btn-lg px-4 py-2" download>
-  Download CV
-</a>
-
-        <a href="#contact" class="btn btn-outline-neon btn-lg px-4 py-2">
-          <i class="fas fa-paper-plane" aria-hidden="true"></i>Contact Me
-        </a>
+        <div class="hero-social" aria-label="Social links">
+          <a class="social-chip" href="mailto:miled.r.issa@hotmail.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a class="social-chip" href="https://linkedin.com/in/miled-issa-360275333" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a class="social-chip" href="https://github.com/M677871" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="hero-social mt-4" aria-label="Social links">
-        <a class="social-chip" href="mailto:miled.r.issa@hotmail.com" aria-label="Email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-        <a class="social-chip" href="https://linkedin.com/in/miled-issa-360275333" target="_blank"
-          rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a class="social-chip" href="https://github.com/M677871" target="_blank" rel="noopener noreferrer"
-          aria-label="GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
+      <div class="hero-visual">
+        <div class="portrait-frame portrait-frame--desktop">
+          <div class="portrait-core">
+            <img class="profile-image" src="./images/miled.png" alt="Portrait of Miled Issa" width="220" height="220"
+              loading="eager" decoding="async" fetchpriority="high" />
+          </div>
+        </div>
+
+        <div class="terminal-card" aria-hidden="true">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <span class="terminal-title">miled@portfolio</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="terminal-prompt">$</span> role: full-stack developer</div>
+            <div class="terminal-line"><span class="terminal-prompt">$</span> focus: secure, scalable apps</div>
+            <div class="terminal-line"><span class="terminal-prompt">$</span> stack: NodeJS, Springboot, React</div>
+            <div class="terminal-line"><span class="terminal-prompt">$</span> practice: clean architecture</div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- ABOUT -->
-    <section id="about" class="section text-center" data-aos="fade-up">
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="section" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text text-text-primary">
-          Motivated Computer Science student specializing in full-stack development and algorithmic problem-solving. I
-          build secure, scalable applications end-to-end, writing clean, maintainable code across frontend and backend,
-          grounded in strong mathematics and analytical thinking.
-          <span class="text-neon fw-semibold">Dean's Honor List student every semester to date.</span>
-          Currently strengthening my experience through real-world full-stack projects and intensive problem-solving,
-          and eager to contribute to high-impact products in collaborative, fast-moving teams.
-        </p>
+        <div class="about-layout">
+          <p class="about-kicker">about /></p>
+          <div class="about-head">
+            <h2 class="about-title">About Me</h2>
+            <p class="about-tagline"><i>Driven by curiosity, grounded in discipline.</i></p>
+          </div>
+          <div class="about-copy about-body">
+            <p>Motivated Computer Science student specializing in full-stack development and algorithmic problem-solving, building secure, scalable applications end-to-end.</p>
+            <p>Grounded in strong mathematics and analytical thinking, I'm strengthening my experience through real-world full-stack projects and intensive problem-solving to contribute to high-impact products in collaborative teams.</p>
+          </div>
+          <dl class="about-highlights" aria-label="Highlights">
+            <div class="highlight-row">
+              <dt>Focus</dt>
+              <dd>Full-stack development</dd>
+            </div>
+            <div class="highlight-row">
+              <dt>Strength</dt>
+              <dd>Algorithmic problem-solving</dd>
+            </div>
+            <div class="highlight-row">
+              <dt>Recognition</dt>
+              <dd>Dean's Honor List every semester</dd>
+            </div>
+            <div class="highlight-row">
+              <dt>GPA</dt>
+              <dd>3.7 / 4</dd>
+            </div>
+            <div class="highlight-row">
+              <dt>Languages</dt>
+              <dd>C / C++ / Java / JS / TS / Python</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="150">
+    <!-- ═══ EDUCATION ═══ -->
+    <section id="education" class="section section-alt" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title text-center">Education</h2>
-
-        <div class="row g-4 justify-content-center equal-cards">
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <article class="card-neon text-center">
-              <div class="edu-header mb-2">
-                <img src="./images/UOB.png" alt="University of Balamand logo" class="edu-logo" width="72" height="72"
-                  loading="lazy" decoding="async" />
-                <div class="text-start">
-                  <h3 class="card-title mb-1">University of Balamand</h3>
-                  <p class="card-subtitle mb-0">BS in Computer Science (2024-Present)</p>
-                </div>
+        <div class="section-header">
+          <p class="section-kicker">education /></p>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle"><i>Academic foundation in computer science.</i></p>
+        </div>
+        <div class="edu-grid">
+          <article class="edu-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="edu-header">
+              <img src="./images/UOB.png" alt="University of Balamand logo" class="edu-logo" width="56" height="56"
+                loading="lazy" decoding="async" />
+              <div>
+                <h3 class="card-title">University of Balamand</h3>
+                <p class="card-subtitle"><i>BS in Computer Science.</i></p>
+                <p class="card-duration">2024 - Present</p>
               </div>
-
-              <div class="mini-facts">
-                <span class="mini-pill"><i class="fa-solid fa-star" aria-hidden="true"></i> GPA: 3.7/4</span>
-                <span class="mini-pill"><i class="fa-solid fa-award" aria-hidden="true"></i> Honor List</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
-            <article class="card-neon text-center">
-              <div class="edu-header mb-2">
-                <img src="./images/42beirut-logo.png" alt="42 Beirut logo" class="edu-logo" width="72" height="72"
-                  loading="lazy" decoding="async" />
-                <div class="text-start">
-                  <h3 class="card-title mb-1">42 Beirut</h3>
-                  <p class="card-subtitle mb-0">42 Core Curriculum - Architecture of Digital Technologies Program.</p>
-                </div>
-              </div>
-
+            </div>
             <div class="mini-facts">
-<span class="mini-pill"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Level: 3</span>
+              <span class="mini-pill"><i class="fa-solid fa-star" aria-hidden="true"></i> GPA: 3.7/4</span>
+              <span class="mini-pill"><i class="fa-solid fa-award" aria-hidden="true"></i> Honor List</span>
+            </div>
+          </article>
+          <article class="edu-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="edu-header">
+              <img src="./images/42beirut-logo.png" alt="42 Beirut logo" class="edu-logo" width="56" height="56"
+                loading="lazy" decoding="async" />
+              <div>
+                <h3 class="card-title">42 Beirut</h3>
+                <p class="card-subtitle"><i>Core Curriculum &middot; Architecture of Digital Technologies.</i></p>
+                <p class="card-duration">2025 - Present</p>
+              </div>
+            </div>
+            <div class="mini-facts">
+              <span class="mini-pill"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Level: 3</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="section" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">skills /></p>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle"><i>Technologies and tools I work with every day.</i></p>
+        </div>
+        <div class="skills-shell">
+          <div class="skills-category" data-aos="fade-up">
+            <p class="skills-category-title">Languages</p>
+            <ul class="skills-rows" aria-label="Languages">
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-python"></i></span>Python</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt="" width="14" height="14" loading="lazy" /></span>C / C++</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-java"></i></span>Java</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-js"></i></span>JavaScript</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/typescript.svg" alt="" width="14" height="14" loading="lazy" /></span>TypeScript</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-database"></i></span>SQL</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-html5"></i></span>HTML</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-css3-alt"></i></span>CSS</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnubash.svg" alt="" width="14" height="14" loading="lazy" /></span>Bash</li>
+            </ul>
+          </div>
 
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+            <p class="skills-category-title">Frameworks &amp; Technologies</p>
+            <ul class="skills-rows" aria-label="Frameworks and platforms">
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/springboot.svg" alt="" width="14" height="14" loading="lazy" /></span>Spring Boot</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/nestjs.svg" alt="" width="14" height="14" loading="lazy" /></span>NestJS</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-java"></i></span>JavaFX</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-node-js"></i></span>Node.js</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/express.svg" alt="" width="14" height="14" loading="lazy" /></span>Express.js</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-react"></i></span>React</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/typeorm.svg" alt="" width="14" height="14" loading="lazy" /></span>TypeORM</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ejs.svg" alt="" width="14" height="14" loading="lazy" /></span>EJS</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-plug"></i></span>REST APIs</li>
+            </ul>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+            <p class="skills-category-title">Developer Tools</p>
+            <ul class="skills-rows" aria-label="Developer tools">
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-git-alt"></i></span>Git</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fab fa-github"></i></span>GitHub</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visualstudiocode.svg" alt="" width="14" height="14" loading="lazy" /></span>VS Code</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/intellijidea.svg" alt="" width="14" height="14" loading="lazy" /></span>IntelliJ IDEA</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/androidstudio.svg" alt="" width="14" height="14" loading="lazy" /></span>Android Studio</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xcode.svg" alt="" width="14" height="14" loading="lazy" /></span>Xcode</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apachenetbeanside.svg" alt="" width="14" height="14" loading="lazy" /></span>NetBeans</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linux.svg" alt="" width="14" height="14" loading="lazy" /></span>Linux Shell</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="" width="14" height="14" loading="lazy" /></span>Postman</li>
+            </ul>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+            <p class="skills-category-title">Databases</p>
+            <ul class="skills-rows" aria-label="Databases">
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postgresql.svg" alt="" width="14" height="14" loading="lazy" /></span>PostgreSQL</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><img class="skills-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mariadb.svg" alt="" width="14" height="14" loading="lazy" /></span>MariaDB</li>
+            </ul>
+          </div>
+
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
+            <p class="skills-category-title">Practices</p>
+            <ul class="skills-rows" aria-label="Practices">
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-sitemap"></i></span>Clean Architecture</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-code-branch"></i></span>Code Review</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-file-alt"></i></span>Documentation</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-plug"></i></span>REST API Design</li>
+              <li class="skills-row"><span class="skills-row-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></span>Auth &amp; Security (JWT, OTP)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects" class="section section-alt" data-aos="fade-up">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-kicker">projects /></p>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-subtitle"><i>Things I've built, from full-stack platforms to systems programming.</i></p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PharmaFlow -->
+          <article class="project-card project-card--featured" data-aos="fade-up">
+            <div class="project-head">
+              <h3 class="project-title">PharmaFlow</h3>
+              <span class="status-badge status-badge--progress"><span class="status-dot" aria-hidden="true"></span> In Progress</span>
+            </div>
+            <div class="project-tech-tags">
+              <span class="tech-badge"><i class="fab fa-node-js" aria-hidden="true"></i> NestJS</span>
+              <span class="tech-badge"><i class="fab fa-react" aria-hidden="true"></i> React</span>
+              <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
+              <span class="tech-badge">TypeORM</span>
+            </div>
+            <p class="project-tagline"><i>Full-stack pharmacy management system with modern architecture.</i></p>
+            <ul class="impact-list">
+              <li>Building a NestJS backend with TypeORM entities, relations, and PostgreSQL.</li>
+              <li>React frontend with role-based views for pharmacists and inventory managers.</li>
+              <li>Modular architecture with DTOs, services, guards, and validation pipes.</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/M677871/pharmacy-management-system.git" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-github" aria-hidden="true"></i> View Code</a>
+            </div>
+          </article>
+
+          <!-- Secure Online Learning Platform -->
+          <article class="project-card project-card--featured" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-head">
+              <h3 class="project-title">Secure Online Learning Platform</h3>
+            </div>
+            <div class="project-tech-tags">
+              <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Spring Boot</span>
+              <span class="tech-badge"><i class="fas fa-key" aria-hidden="true"></i> JWT + OTP 2FA</span>
+              <span class="tech-badge"><i class="fas fa-desktop" aria-hidden="true"></i> JavaFX</span>
+              <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
+            </div>
+            <p class="project-tagline"><i>API-first backend with a secure desktop client experience.</i></p>
+            <ul class="impact-list">
+              <li>Role-based access with email OTP two-factor authentication and JWT-secured REST APIs.</li>
+              <li>Modern JavaFX desktop client integrated with the platform backend.</li>
+              <li>JPA-only data access layer (no native SQL) for maintainability.</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/M677871/csis-231-project.git" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-github" aria-hidden="true"></i> View Code</a>
+            </div>
+          </article>
+
+          <!-- Online Learning Platform (Backend) -->
+          <article class="project-card project-card--featured" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-head">
+              <h3 class="project-title">Online Learning Platform</h3>
+            </div>
+            <div class="project-tech-tags">
+              <span class="tech-badge"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
+              <span class="tech-badge"><i class="fas fa-server" aria-hidden="true"></i> Express</span>
+              <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> SQL / MariaDB</span>
+              <span class="tech-badge"><i class="fas fa-code" aria-hidden="true"></i> EJS</span>
+            </div>
+            <p class="project-tagline"><i>Backend-focused platform with clean layered architecture.</i></p>
+            <ul class="impact-list">
+              <li>Clean architecture: Models &#8594; Repository &#8594; Service &#8594; Controller &#8594; Routes.</li>
+              <li>REST-style routing and backend logic for core platform entities and workflows.</li>
+              <li>SQL database layer with EJS as a minimal server-rendered view for data display.</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/M677871/csis-228-project.git" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-github" aria-hidden="true"></i> View Code</a>
+            </div>
+          </article>
+
+          <!-- 42 Beirut Core Projects -->
+          <article class="project-card project-card--featured" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-head">
+              <h3 class="project-title">42 Beirut Core Projects</h3>
+            </div>
+            <div class="project-tech-tags">
+              <span class="tech-badge">C</span>
+              <span class="tech-badge"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+              <span class="tech-badge"><img class="badge-icon-svg" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnubash.svg"
+                  alt="" width="14" height="14" loading="lazy" /> Shell</span>
+            </div>
+            <p class="project-tagline"><i>Systems programming and algorithmic challenges at 42 School.</i></p>
+            <ul class="impact-list">
+              <li>Low-level C projects covering memory management, I/O, and sorting algorithms.</li>
+              <li>System administration with Born2beroot (Linux, VM, security policies).</li>
+              <li>Python piscine covering scripting, data manipulation, and automation.</li>
+            </ul>
+            <ul class="fortytwo-list" aria-label="42 project names">
+              <li>libft</li>
+              <li>ft_printf</li>
+              <li>get_next_line</li>
+              <li>push_swap</li>
+              <li>Born2beroot</li>
+              <li>Python Piscine</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/M677871" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer"><i
+                  class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Secondary / Other Projects -->
+        <div class="secondary-projects-section">
+          <button class="secondary-toggle" id="secondaryToggle" type="button" aria-expanded="false"
+            aria-controls="secondaryGrid">
+            <span>Other Projects</span>
+            <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+          </button>
+          <div class="secondary-projects-grid" id="secondaryGrid">
+            <article class="project-card project-card--secondary">
+              <h3 class="project-title">Flight Reservation System</h3>
+              <div class="project-tech-tags">
+                <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Java</span>
+                <span class="tech-badge"><i class="fas fa-cube" aria-hidden="true"></i> OOP</span>
+              </div>
+              <p class="text-muted-c" style="font-size:var(--fs-xs);">Object-oriented airline management with seat allocation logic and persistent records.</p>
+              <div class="project-actions">
+                <a href="https://github.com/M677871/flight-reservation-system.git" class="btn btn-outline btn-sm"
+                  target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
+              </div>
+            </article>
+            <article class="project-card project-card--secondary">
+              <h3 class="project-title">Interactive Drum Kit</h3>
+              <div class="project-tech-tags">
+                <span class="tech-badge"><i class="fab fa-html5" aria-hidden="true"></i> HTML</span>
+                <span class="tech-badge"><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS</span>
+                <span class="tech-badge"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</span>
+              </div>
+              <p class="text-muted-c" style="font-size:var(--fs-xs);">Keyboard-driven drum machine with instant visual feedback and real-time audio playback.</p>
+              <div class="project-actions">
+                <a href="https://github.com/M677871/web-drumkit.git" class="btn btn-outline btn-sm" target="_blank"
+                  rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
+              </div>
+            </article>
+            <article class="project-card project-card--secondary">
+              <h3 class="project-title">Static Array Linked List</h3>
+              <div class="project-tech-tags">
+                <span class="tech-badge"><img class="badge-icon-svg"
+                    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt="C++" width="14"
+                    height="14" loading="lazy" /> C++</span>
+                <span class="tech-badge"><i class="fas fa-diagram-project" aria-hidden="true"></i> Data Structures</span>
+              </div>
+              <p class="text-muted-c" style="font-size:var(--fs-xs);">Memory-efficient linked list with static array allocation and custom iterators.</p>
+              <div class="project-actions">
+                <a href="https://github.com/M677871/ArrayBasedLinkedList.git" class="btn btn-outline btn-sm"
+                  target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View Code</a>
               </div>
             </article>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section text-center" data-aos="fade-up" data-aos-delay="100">
+    <!-- ═══ EXTRACURRICULAR ═══ -->
+    <section id="volunteering" class="section" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-
-        <div class="row g-4 justify-content-center skills-grid">
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
-            <article class="card-neon skills-card">
-              <div class="skills-card-header">
-                <span class="skills-icon" aria-hidden="true">
-                  <i class="fas fa-code"></i>
-                </span>
-                <div class="skills-card-title">
-                  <h3 class="skills-title">Languages</h3>
-                  <p class="skills-subtitle text-text-secondary">Core programming and web languages.</p>
-                </div>
+        <div class="section-header">
+          <p class="section-kicker">activities /></p>
+          <h2 class="section-title">Extracurricular</h2>
+          <p class="section-subtitle"><i>Leadership and community involvement.</i></p>
+        </div>
+        <div class="single-card-center">
+          <article class="edu-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h3 class="card-title" style="font-size:var(--fs-h3);">Vice President &mdash; UOB Developers Club</h3>
+                <p class="card-subtitle">University of Balamand &middot; 2025 &ndash; Present</p>
               </div>
-              <ul class="skill-chip-list" aria-label="Languages">
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-python"></i></span>
-                  Python
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  C++
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-java"></i></span>
-                  Java
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-js"></i></span>
-                  JavaScript
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/typescript.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  TypeScript
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fas fa-database"></i></span>
-                  SQL
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-html5"></i></span>
-                  HTML
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-css3-alt"></i></span>
-                  CSS
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gnubash.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Bash
-                </li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <article class="card-neon skills-card">
-              <div class="skills-card-header">
-                <span class="skills-icon" aria-hidden="true">
-                  <i class="fas fa-screwdriver-wrench"></i>
-                </span>
-                <div class="skills-card-title">
-                  <h3 class="skills-title">Developer Tools</h3>
-                  <p class="skills-subtitle text-text-secondary">Everyday tooling and environments.</p>
-                </div>
-              </div>
-              <ul class="skill-chip-list" aria-label="Developer tools">
-                <li class="skill-chip">
-                  <span class="skill-chip-icon skill-chip-icon-group" aria-hidden="true">
-                    <i class="fab fa-git-alt"></i>
-                    <i class="fab fa-github"></i>
-                  </span>
-                  Git &amp; GitHub
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visualstudiocode.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  VS Code
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/intellijidea.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  IntelliJ IDEA
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/androidstudio.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Android Studio
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/xcode.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Xcode
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/apachenetbeanside.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  NetBeans
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/rstudio.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  RStudio
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linux.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Linux shell
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Postman
-                </li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <article class="card-neon skills-card">
-              <div class="skills-card-header">
-                <span class="skills-icon" aria-hidden="true">
-                  <i class="fas fa-layer-group"></i>
-                </span>
-                <div class="skills-card-title">
-                  <h3 class="skills-title">Technologies / Frameworks</h3>
-                  <p class="skills-subtitle text-text-secondary">Platforms, libraries, and APIs.</p>
-                </div>
-              </div>
-              <ul class="skill-chip-list" aria-label="Technologies and frameworks">
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/springboot.svg" alt=""
-                      width="16" height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Spring Boot
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-java"></i></span>
-                  JavaFX
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-node-js"></i></span>
-                  Node.js
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/express.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  Express.js
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fab fa-react"></i></span>
-                  React.js
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ejs.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  EJS
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true"><i class="fas fa-plug"></i></span>
-                  REST APIs
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mariadb.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  MariaDB
-                </li>
-                <li class="skill-chip">
-                  <span class="skill-chip-icon" aria-hidden="true">
-                    <img class="skill-chip-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postgresql.svg" alt="" width="16"
-                      height="16" loading="lazy" decoding="async" />
-                  </span>
-                  PostgreSQL
-                </li>
-              </ul>
-            </article>
-          </div>
+            </div>
+            <ul class="impact-list">
+              <li>Co-leading the developer community on campus.</li>
+              <li>Organizing workshops, coding sessions, and tech events.</li>
+              <li>Supporting members with learning resources and project guidance.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="200">
+    <!-- ═══ COURSEWORK ═══ -->
+    <section id="certificates" class="section section-alt" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Selected Projects</h2>
-
-        <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up">
-            <article class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
-                <h3 class="project-title">Secure Online Learning Platform</h3>
-                <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Spring Boot</span>
-                  <span class="tech-badge"><i class="fas fa-key" aria-hidden="true"></i> JWT + OTP 2FA</span>
-                  <span class="tech-badge"><i class="fas fa-desktop" aria-hidden="true"></i> JavaFX</span>
-                  <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
-                </div>
-              </div>
-
-              <p class="text-text-secondary project-summary">
-                Secure learning platform with an API-first backend and desktop client experience.
-              </p>
-              <ul class="impact-list">
-                <li>Role-based access with email OTP 2FA and JWT-secured REST APIs.</li>
-                <li>Modern JavaFX desktop client integrated with the platform.</li>
-                <li>JPA-only data access layer (no native SQL) for maintainability.</li>
-              </ul>
-
-              <a href="https://github.com/M677871/csis-231-project.git" class="btn btn-outline-neon mt-3" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-github" aria-hidden="true"></i>View Code
-              </a>
-            </article>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <article class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
-                <h3 class="project-title">Online Learning Platform</h3>
-                <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
-                  <span class="tech-badge"><i class="fas fa-server" aria-hidden="true"></i> Express</span>
-                  <span class="tech-badge"><i class="fas fa-database" aria-hidden="true"></i> SQL</span>
-                  <span class="tech-badge"><i class="fas fa-code" aria-hidden="true"></i> EJS</span>
-                </div>
-              </div>
-
-           <p class="text-text-secondary project-summary">
-  Backend-focused learning platform built with Node.js and Express, using EJS only as a lightweight server-rendered view to display database data.
-</p>
-<ul class="impact-list">
-  <li>Implemented REST-style routing and backend logic for core platform entities and workflows.</li>
-  <li>Designed and integrated a SQL database layer to store and retrieve application data reliably.</li>
-  <li>Used EJS as a minimal templating layer for quick visualization of database content (not a frontend-heavy UI).</li>
-</ul>
-
-
-              <a href="https://github.com/M677871/csis-228-project.git" class="btn btn-outline-neon mt-3" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-github" aria-hidden="true"></i>View Code
-              </a>
-            </article>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <article class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
-                <h3 class="project-title">Static Array Linked List</h3>
-                <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge">
-                    <i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Data Structures
-                  </span>
-                  <span class="tech-badge">
-                    <img class="badge-icon-svg"
-                      src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/cplusplus.svg" alt="C++"
-                      width="16" height="16" loading="lazy" decoding="async" />
-                    C++
-                  </span>
-                </div>
-              </div>
-
-              <p class="text-text-secondary project-summary">
-                Memory-efficient linked list design optimized for predictable performance.
-              </p>
-              <ul class="impact-list">
-                <li>Static array allocation reduces overhead and improves cache locality.</li>
-                <li>Custom iterator enables clean traversal and integration.</li>
-              </ul>
-
-              <a href="https://github.com/M677871/ArrayBasedLinkedList.git" class="btn btn-outline-neon mt-3"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github" aria-hidden="true"></i>View Code
-              </a>
-            </article>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <article class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
-                <h3 class="project-title">Flight Reservation System</h3>
-                <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-java" aria-hidden="true"></i> Java</span>
-                  <span class="tech-badge"><i class="fas fa-cube" aria-hidden="true"></i> OOP</span>
-                </div>
-              </div>
-
-              <p class="text-text-secondary project-summary">
-                Object-oriented airline management with reliable data workflows.
-              </p>
-              <ul class="impact-list">
-                <li>Seat allocation logic and ticket management workflows.</li>
-                <li>Reliable persistence for flight and passenger records.</li>
-              </ul>
-
-              <a href="https://github.com/M677871/flight-reservation-system.git" class="btn btn-outline-neon mt-3"
-                target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github" aria-hidden="true"></i>View Code
-              </a>
-            </article>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <article class="project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3 gap-3 flex-wrap">
-                <h3 class="project-title">Interactive Drum Kit</h3>
-                <div class="d-flex gap-2 flex-wrap justify-content-end">
-                  <span class="tech-badge"><i class="fab fa-html5" aria-hidden="true"></i> HTML</span>
-                  <span class="tech-badge"><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS</span>
-                  <span class="tech-badge"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</span>
-                </div>
-              </div>
-
-              <p class="text-text-secondary project-summary">
-                Interactive drum machine with crisp UI feedback and audio response.
-              </p>
-              <ul class="impact-list">
-                <li>Keyboard-driven controls with instant visual feedback.</li>
-                <li>Real-time audio playback for responsive performance.</li>
-              </ul>
-
-              <a href="https://github.com/M677871/web-drumkit.git" class="btn btn-outline-neon mt-3" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-github" aria-hidden="true"></i>View Code
-              </a>
-            </article>
-          </div>
+        <div class="section-header">
+          <p class="section-kicker">coursework /></p>
+          <h2 class="section-title">Coursework &amp; Workshops</h2>
+          <p class="section-subtitle"><i>Continuous learning beyond the classroom.</i></p>
+        </div>
+        <div class="single-card-center" style="max-width:520px;">
+          <article class="edu-card course-card" style="text-align:center;" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-certificate" style="font-size:2rem; color:var(--icon-color); margin-bottom:var(--sp-4); display:block;" aria-hidden="true"></i>
+            <h3 class="card-title">The Complete 2025 Web Development Bootcamp</h3>
+            <p class="card-subtitle" style="margin-bottom:var(--sp-3);">Udemy (Angela Yu) &middot; 2025</p>
+            <p class="text-muted-c" style="font-size:var(--fs-small); margin-bottom:var(--sp-4);">Completed 60+ hours of full-stack training covering Node.js, Express, React, and PostgreSQL.</p>
+            <a href="https://www.udemy.com/certificate/UC-3dfaf716-aeed-4a0d-8b53-7cbd6dd16a50/" target="_blank"
+              rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt" aria-hidden="true"></i> View Certificate</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- EXTRACURRICULAR -->
-    <section id="volunteering" class="section bg-dark-secondary" data-aos="fade-up" data-aos-delay="220">
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="section" data-aos="fade-up">
       <div class="container">
-        <h2 class="section-title text-center">Extracurricular Activities</h2>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-8 col-lg-7" data-aos="zoom-in" data-aos-delay="100">
-            <article class="card-neon project-card">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <h3 class="project-title mb-1">Vice President - UOB Developers Club</h3>
-                  <small class="text-text-secondary">University of Balamand - 2025-Present</small>
-                </div>
-              </div>
-
-              <ul class="text-text-secondary mb-0 ps-3">
-                <li>Co-leading the developer community on campus.</li>
-                <li>Organizing workshops, coding sessions, and tech events.</li>
-                <li>Supporting members with learning resources and project guidance.</li>
-              </ul>
-            </article>
+        <div class="contact-shell">
+          <div class="contact-intro">
+            <p class="contact-kicker">contact /></p>
+            <h2 class="contact-title">Get in Touch</h2>
+            <p class="contact-subtitle"><i>Have a question or want to work together? Let's connect.</i></p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COURSEWORK -->
-    <section id="certificates" class="section text-center" data-aos="fade-up" data-aos-delay="200">
-      <div class="container">
-        <h2 class="section-title">Relevant Coursework and Workshops</h2>
-
-        <div class="row g-4 justify-content-center equal-cards">
-          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <article class="card-neon text-center">
-              <i class="fas fa-certificate fa-3x mb-3 text-neon" aria-hidden="true"></i>
-              <h3 class="card-title">The Complete 2025 Web Development Bootcamp</h3>
-              <p class="card-subtitle mb-2">Udemy (Angela Yu) - 2025</p>
-              <p class="text-text-secondary mb-0">
-                Completed 60+ hours of full-stack training covering Node.js, Express, React, and PostgreSQL.
-              </p>
-              <a href="https://www.udemy.com/certificate/UC-3dfaf716-aeed-4a0d-8b53-7cbd6dd16a50/" target="_blank"
-                rel="noopener noreferrer" class="btn btn-outline-neon btn-sm mt-3">
-                View Certificate
-              </a>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section text-center" data-aos="fade-up" data-aos-delay="300">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-4" data-aos="zoom-in">
-            <article class="card-neon contact-card">
-              <i class="fas fa-envelope fa-3x mb-3" aria-hidden="true"></i>
-              <h3 class="contact-title">Email</h3>
-              <a href="mailto:miled.r.issa@hotmail.com" class="d-block text-neon fw-bold">miled.r.issa@hotmail.com</a>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-4" data-aos="zoom-in" data-aos-delay="100">
-            <article class="card-neon contact-card">
-              <i class="fab fa-linkedin fa-3x mb-3" aria-hidden="true"></i>
-              <h3 class="contact-title">LinkedIn</h3>
-              <a href="https://linkedin.com/in/miled-issa-360275333" class="d-block text-neon fw-bold" target="_blank"
-                rel="noopener noreferrer">Connect on LinkedIn</a>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-4" data-aos="zoom-in" data-aos-delay="200">
-            <article class="card-neon contact-card">
-              <i class="fab fa-github fa-3x mb-3" aria-hidden="true"></i>
-              <h3 class="contact-title">GitHub</h3>
-              <a href="https://github.com/M677871" class="d-block text-neon fw-bold" target="_blank"
-                rel="noopener noreferrer">Explore My GitHub</a>
-            </article>
+          <div class="contact-list" role="list">
+            <a class="contact-row" href="mailto:miled.r.issa@hotmail.com">
+              <span class="contact-row-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+              <span class="contact-row-text">
+                <span class="contact-row-label">Email</span>
+                <span class="contact-row-value">miled.r.issa@hotmail.com</span>
+              </span>
+              <span class="contact-row-action" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-row" href="https://wa.me/96170320984" target="_blank" rel="noopener noreferrer">
+              <span class="contact-row-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+              <span class="contact-row-text">
+                <span class="contact-row-label">WhatsApp</span>
+                <span class="contact-row-value">+961 70 320 984</span>
+              </span>
+              <span class="contact-row-action" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-row" href="https://linkedin.com/in/miled-issa-360275333" target="_blank" rel="noopener noreferrer">
+              <span class="contact-row-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></span>
+              <span class="contact-row-text">
+                <span class="contact-row-label">LinkedIn</span>
+                <span class="contact-row-value">linkedin.com/in/miled-issa</span>
+              </span>
+              <span class="contact-row-action" aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-row" href="https://github.com/M677871" target="_blank" rel="noopener noreferrer">
+              <span class="contact-row-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+              <span class="contact-row-text">
+                <span class="contact-row-label">GitHub</span>
+                <span class="contact-row-value">github.com/M677871</span>
+              </span>
+              <span class="contact-row-action" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="text-center">
-    <div class="container py-4">
-      <div class="d-flex justify-content-center gap-4 mb-3 flex-wrap">
-        <a href="mailto:miled.r.issa@hotmail.com" class="social-icon" aria-label="Send email">
-          <i class="fas fa-envelope" aria-hidden="true"></i>
-        </a>
-        <a href="https://wa.me/96170320984" class="social-icon" target="_blank" rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/miled-issa-360275333" class="social-icon" target="_blank"
-          rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/M677871" class="social-icon" target="_blank" rel="noopener noreferrer"
-          aria-label="View GitHub repositories">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="mailto:miled.r.issa@hotmail.com" class="social-icon" aria-label="Send email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://wa.me/96170320984" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/miled-issa-360275333" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/M677871" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="View GitHub repositories"><i class="fab fa-github" aria-hidden="true"></i></a>
       </div>
-
-      <p class="text-text-secondary mb-0">
-        &copy; <span id="year"></span> Miled Issa. All rights reserved.
-      </p>
+      <p>&copy; <span id="year"></span> Miled Issa. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Back to Top -->
-  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-  </button>
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top"><i class="fas fa-chevron-up"
+      aria-hidden="true"></i></button>
 
   <!-- Vendor JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -707,119 +619,109 @@
   <!-- App JS -->
   <script>
     (function () {
-      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      /* Reduced motion check */
+      var prefersRM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // AOS (disable if reduced motion)
-      if (!prefersReducedMotion && window.AOS) {
-        AOS.init({ duration: 700, once: true, offset: 110, easing: 'ease-out-cubic' });
+      /* AOS init */
+      if (!prefersRM && window.AOS) {
+        AOS.init({ duration: 600, once: true, offset: 80, easing: 'ease-out-cubic' });
       }
 
-      // Footer year
-      const yearEl = document.getElementById('year');
+      /* Year */
+      var yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Close mobile nav on link click
-      const navCollapse = document.getElementById('navbarNav');
-      const navLinks = Array.from(document.querySelectorAll('#navbarNav .nav-link'));
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          const isExpanded = navCollapse && navCollapse.classList.contains('show');
-          if (isExpanded && window.bootstrap) {
-            const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse);
-            bsCollapse.hide();
+      /* Mobile nav close on link click */
+      var navCollapse = document.getElementById('navbarNav');
+      var navLinks = Array.from(document.querySelectorAll('#navbarNav .nav-link'));
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (navCollapse && navCollapse.classList.contains('show') && window.bootstrap) {
+            bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
           }
         });
       });
 
-      // Back to Top (throttled)
-      const backToTopBtn = document.getElementById('backToTop');
-      let ticking = false;
-
-      function updateBackToTop() {
+      /* Back to top */
+      var backToTopBtn = document.getElementById('backToTop');
+      var ticking = false;
+      function updateBTT() {
         if (!backToTopBtn) return;
-        const show = window.scrollY > 400;
-        backToTopBtn.classList.toggle('is-visible', show);
+        backToTopBtn.classList.toggle('is-visible', window.scrollY > 400);
         ticking = false;
       }
-
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(updateBackToTop);
-          ticking = true;
-        }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { window.requestAnimationFrame(updateBTT); ticking = true; }
       }, { passive: true });
-
       if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        backToTopBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: prefersRM ? 'auto' : 'smooth' });
         });
-        updateBackToTop();
+        updateBTT();
       }
 
-      // Theme toggle (respects system preference if nothing stored)
-      const themeToggleBtn = document.getElementById('themeToggle');
-      const rootEl = document.documentElement;
-      const iconEl = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+      /* Theme toggle */
+      var themeBtn = document.getElementById('themeToggle');
+      var rootEl = document.documentElement;
+      var iconEl = themeBtn ? themeBtn.querySelector('i') : null;
 
       function setTheme(mode) {
-        const isLight = mode === 'light';
+        var isLight = mode === 'light';
         rootEl.classList.toggle('light-theme', isLight);
-
-        if (themeToggleBtn) {
-          themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
-          themeToggleBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        if (themeBtn) {
+          themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+          themeBtn.setAttribute('aria-pressed', String(isLight));
+          themeBtn.title = isLight ? 'Switch to dark' : 'Switch to light';
         }
-        if (iconEl) {
-          iconEl.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-        }
+        if (iconEl) iconEl.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', isLight ? '#f6f7fb' : '#07090d');
       }
 
-      const storedTheme = localStorage.getItem('theme-preference');
-      if (storedTheme === 'light' || storedTheme === 'dark') {
-        setTheme(storedTheme);
-      } else {
-        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        setTheme(prefersLight ? 'light' : 'dark');
-      }
+      var storedTheme = localStorage.getItem('theme-preference');
+      if (storedTheme === 'light' || storedTheme === 'dark') setTheme(storedTheme);
+      else setTheme('dark');
 
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-          const isLight = rootEl.classList.contains('light-theme');
-          const next = isLight ? 'dark' : 'light';
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function () {
+          var next = rootEl.classList.contains('light-theme') ? 'dark' : 'light';
           setTheme(next);
           localStorage.setItem('theme-preference', next);
         });
       }
 
-      // Active nav link (IntersectionObserver)
-      const sections = Array.from(document.querySelectorAll('main section[id]'));
-      const linkMap = new Map(
+      /* Active section highlight */
+      var sections = Array.from(document.querySelectorAll('main section[id]'));
+      var linkMap = new Map(
         navLinks
-          .filter(a => a.getAttribute('href') && a.getAttribute('href').startsWith('#'))
-          .map(a => [a.getAttribute('href').slice(1), a])
+          .filter(function (a) { return a.getAttribute('href') && a.getAttribute('href').startsWith('#'); })
+          .map(function (a) { return [a.getAttribute('href').slice(1), a]; })
       );
 
       if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
             if (!entry.isIntersecting) return;
-            const id = entry.target.getAttribute('id');
-            linkMap.forEach((a) => {
-              a.classList.remove('active');
-              a.removeAttribute('aria-current');
-            });
-            const active = linkMap.get(id);
-            if (active) {
-              active.classList.add('active');
-              active.setAttribute('aria-current', 'page');
-            }
+            var id = entry.target.getAttribute('id');
+            linkMap.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+            var active = linkMap.get(id);
+            if (active) { active.classList.add('active'); active.setAttribute('aria-current', 'page'); }
           });
-        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0.01 });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+        sections.forEach(function (sec) { io.observe(sec); });
+      }
 
-        sections.forEach(sec => io.observe(sec));
+      /* Secondary projects toggle */
+      var secToggle = document.getElementById('secondaryToggle');
+      var secGrid = document.getElementById('secondaryGrid');
+      if (secToggle && secGrid) {
+        secToggle.addEventListener('click', function () {
+          var isOpen = secGrid.classList.contains('is-open');
+          secGrid.classList.toggle('is-open', !isOpen);
+          secToggle.setAttribute('aria-expanded', String(!isOpen));
+        });
       }
     })();
   </script>
 </body>
-
 </html>
